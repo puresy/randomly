@@ -27,7 +27,7 @@ class ViewController: UIViewController {
     // MARK: Actions
 
     @IBAction func setRandomNumber(sender: UIButton) {
-        self.numberLabel.text = "Loading…"
+        self.numberLabel.text = "loading…"
         
         let url = NSURL(string: "https://www.random.org/integers/?num=1&min=1&max=100&col=1&base=10&format=plain&rnd=new")
         
