@@ -18,22 +18,28 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="When I want to get a random number" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rFA-8T-bYP">
+                                <rect key="frame" x="158" y="91" width="284" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <stackView opaque="NO" contentMode="scaleToFill" misplaced="YES" axis="vertical" spacing="12" translatesAutoresizingMaskIntoConstraints="NO" id="lx9-gU-sWw">
-                                <rect key="frame" x="250" y="120" width="100" height="63"/>
+                                <rect key="frame" x="250" y="205" width="100" height="63"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="N/A" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgK-sZ-L1y">
-                                        <rect key="frame" x="0.0" y="0.0" width="100" height="21"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="cWz-sS-hbu">
-                                        <rect key="frame" x="0.0" y="33" width="100" height="30"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="100" height="30"/>
                                         <state key="normal" title="Randomly"/>
                                         <connections>
                                             <action selector="setRandomNumber:" destination="BYZ-38-t0r" eventType="touchUpInside" id="SFd-6d-iUI"/>
                                         </connections>
                                     </button>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text=" " textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="tgK-sZ-L1y">
+                                        <rect key="frame" x="0.0" y="42" width="100" height="21"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="100" id="PNP-ki-Ttl"/>
@@ -42,9 +48,18 @@
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
+                            <constraint firstAttribute="trailingMargin" secondItem="lx9-gU-sWw" secondAttribute="trailing" constant="230" id="3uP-hc-Dsh"/>
                             <constraint firstItem="lx9-gU-sWw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" id="6Gc-q8-wiN"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lx9-gU-sWw" secondAttribute="bottom" constant="332" id="Fbi-qz-7ir"/>
+                            <constraint firstItem="lx9-gU-sWw" firstAttribute="top" secondItem="rFA-8T-bYP" secondAttribute="bottom" constant="200" id="Km1-QJ-0d4"/>
+                            <constraint firstItem="lx9-gU-sWw" firstAttribute="top" secondItem="rFA-8T-bYP" secondAttribute="bottom" constant="100" id="RnV-WY-yx8"/>
+                            <constraint firstItem="lx9-gU-sWw" firstAttribute="top" secondItem="rFA-8T-bYP" secondAttribute="bottom" constant="200" id="TdI-rY-gY2"/>
                             <constraint firstItem="lx9-gU-sWw" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="100" id="Tmm-JO-t87"/>
+                            <constraint firstItem="lx9-gU-sWw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="230" id="Ub1-DT-McM"/>
+                            <constraint firstItem="lx9-gU-sWw" firstAttribute="top" secondItem="rFA-8T-bYP" secondAttribute="bottom" constant="100" id="V8e-CG-wYX"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="lx9-gU-sWw" secondAttribute="bottom" constant="417" id="YIm-1d-P7T"/>
                             <constraint firstAttribute="trailingMargin" secondItem="lx9-gU-sWw" secondAttribute="trailing" id="oue-3U-BGe"/>
+                            <constraint firstItem="lx9-gU-sWw" firstAttribute="leading" secondItem="8bC-Xf-vdC" secondAttribute="leadingMargin" constant="230" id="tr2-lt-vRq"/>
                         </constraints>
                     </view>
                     <connections>
