@@ -30,15 +30,21 @@ class ViewController: UIViewController {
     // MARK: Actions
     
     @IBAction func setRandomNumber(sender: UIButton) {
-        self.numberLabel.text = "loading…"
         
-        let minInt:String = self.min.text!
+        let minString:String = self.min.text!
         
-        let maxInt:String = self.max.text!
+        let maxString:String = self.max.text!
         
         // TODO: not number? || min >= max
         
-        let url = NSURL(string: "https://www.random.org/integers/?num=1&min="+minInt+"&max="+maxInt+"&col=1&base=10&format=plain&rnd=new")
+        doGetRandomNumber(minString, max: maxString)
+
+    }
+    
+    func doGetRandomNumber(min:String, max:String) {
+        self.numberLabel.text = "loading…"
+        
+        let url = NSURL(string: "https://www.random.org/integers/?num=1&min="+min+"&max="+max+"&col=1&base=10&format=plain&rnd=new")
         
         let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
             //print(NSString(data: data!, encoding:NSUTF8StringEncoding))
@@ -52,8 +58,15 @@ class ViewController: UIViewController {
         
         task.resume()
         
-       // let n:Int = random()
-        //numberLabel.text = String(n)
+        // let n:Int = random()
+        //numberLabel.text = String(n)    
     }
+    
+    func test(min:String, max:String) {
+        self.numberLabel.text = "loading…"
+        self.numberLabel.text = min + max
+        
+    }
+    
 }
 
