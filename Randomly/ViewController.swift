@@ -29,7 +29,7 @@ class ViewController: UIViewController {
     
     // MARK: Actions
     
-    @IBAction func setRandomNumber(sender: UIButton) {
+    @IBAction func setRandomNumber(_ sender: UIButton) {
         
         let minString:String = self.min.text!
         
@@ -37,7 +37,7 @@ class ViewController: UIViewController {
         
         // TODO: not number? || min >= max
         
-        doGetRandomNumber(minString, max: maxString)
+        doGetRandomNumber(min: minString, max: maxString)
 
     }
     
@@ -46,15 +46,16 @@ class ViewController: UIViewController {
         
         let url = NSURL(string: "https://www.random.org/integers/?num=1&min="+min+"&max="+max+"&col=1&base=10&format=plain&rnd=new")
         
-        let task = NSURLSession.sharedSession().dataTaskWithURL(url!) {(data, response, error) in
+        let task = URLSession.shared.dataTask(with: url! as URL, completionHandler: {(data, response, error) in
             //print(NSString(data: data!, encoding:NSUTF8StringEncoding))
-            let s:String = String(data: data!, encoding: NSUTF8StringEncoding)!
+            let s:String = String(data: data!, encoding: String.Encoding.utf8)!
             //self.numberLabel.text = s
             
-            dispatch_async(dispatch_get_main_queue(), {
+            let queue = DispatchQueue(label: "club.maomao.queue")
+            queue.async {
                 self.numberLabel.text = s
-            })
-        }
+            }
+        })
         
         task.resume()
         
